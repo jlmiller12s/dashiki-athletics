@@ -9,6 +9,7 @@ import './styles.css'
 gsap.registerPlugin(ScrollTrigger)
 
 const A = '/assets/'
+const SQUARE_CHECKOUT = 'https://square.link/u/DwI8JZju?src=embed'
 
 const spinFrames = [
   'studio-shot-5.jpg',
@@ -28,6 +29,9 @@ function App() {
   const spin = useRef(null)
   const [frame, setFrame] = useState(0)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [showOrderNotice, setShowOrderNotice] = useState(
+    () => new URLSearchParams(window.location.search).get('order') === 'complete',
+  )
 
   useEffect(() => {
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
@@ -86,6 +90,12 @@ function App() {
   return (
     <div ref={root}>
       <div className="announcement">Built for the work. Designed to be seen.</div>
+      {showOrderNotice && (
+        <div className="order-notice" role="status">
+          <span><strong>Order received.</strong> Thank you for carrying Dashiki Athletics.</span>
+          <button type="button" onClick={() => setShowOrderNotice(false)} aria-label="Dismiss order confirmation">Close</button>
+        </div>
+      )}
       <header className="nav">
         <a href="#top" className="logo" aria-label="Dashiki Athletics home">
           <img src={`${A}cropped-da-logo1-white.png`} alt="Dashiki Athletics" />
@@ -133,18 +143,18 @@ function App() {
         <section className="shop" id="shop">
           <div className="shop__bar">
             <div><p className="eyebrow">Shop the original</p><h2>One bag.<br />Every move.</h2></div>
-            <p>The flagship Dashiki Athletics Gym Bag is currently between drops. Explore every angle and join the next release.</p>
+            <p>The flagship Dashiki Athletics Gym Bag is available now. Explore every angle, then check out securely with Square.</p>
           </div>
           <div className="product-grid">
             <article className="product-card product-card--hero" data-reveal>
               <div className="product-card__image">
                 <span className="product-card__badge">Flagship</span>
                 <img src={`${A}studio-shot-5.jpg`} alt="Dashiki Athletics Original Gym Bag" />
-                <a href="mailto:dashikiathletics@gmail.com?subject=Dashiki%20Gym%20Bag%20Next%20Drop">Notify me <Arrow /></a>
+                <a href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">Buy now — $29.99 <Arrow /></a>
               </div>
               <div className="product-card__meta">
                 <div><h3>The Original Gym Bag</h3><p>Black / Signature Dashiki print</p></div>
-                <strong>Next drop</strong>
+                <strong>$29.99 · In stock</strong>
               </div>
             </article>
             <article className="product-story" data-reveal>
@@ -159,7 +169,7 @@ function App() {
           <div className="store-assurances">
             <div><span>01</span><strong>Multi-carry design</strong><p>Switch the way you carry to match the day.</p></div>
             <div><span>02</span><strong>Purposeful storage</strong><p>Dedicated space for training and daily essentials.</p></div>
-            <div><span>03</span><strong>Small-batch drops</strong><p>Get notified before the next release lands.</p></div>
+            <div><span>03</span><strong>Secure Square checkout</strong><p>Pay through Square and receive an order confirmation instantly.</p></div>
           </div>
         </section>
 
@@ -232,8 +242,8 @@ function App() {
           <div data-reveal>
             <p className="eyebrow">Dashiki Athletics</p>
             <h2>Bold designs.<br /><em>Bold people.</em></h2>
-            <a className="button button--light" href="mailto:dashikiathletics@gmail.com?subject=Dashiki%20Athletics%20Bag%20Availability">
-              Ask about availability <Arrow />
+            <a className="button button--light" href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">
+              Buy now — $29.99 <Arrow />
             </a>
           </div>
         </section>
