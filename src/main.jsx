@@ -149,6 +149,7 @@ function App() {
             <article className="product-card product-card--hero" data-reveal>
               <div className="product-card__image">
                 <span className="product-card__badge">Flagship</span>
+                <a className="product-card__buy-now" href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">Buy now <Arrow /></a>
                 <img src={`${A}studio-shot-5.jpg`} alt="Dashiki Athletics Original Gym Bag" />
                 <a href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">Buy now — $29.99 <Arrow /></a>
               </div>
