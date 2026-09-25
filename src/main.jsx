@@ -89,7 +89,7 @@ function App() {
 
   return (
     <div ref={root}>
-      <div className="announcement"><a href="#shop">Clearance sale · $20.00 · While supplies last</a></div>
+      <div className="announcement"><a href="#shop">Clearance sale · $25.00 · While supplies last</a></div>
       {showOrderNotice && (
         <div className="order-notice" role="status">
           <span><strong>Order received.</strong> Thank you for carrying Dashiki Athletics.</span>
@@ -129,7 +129,7 @@ function App() {
           <div className="hero__copy">
             <p className="eyebrow">Clearance sale · Final inventory</p>
             <h1>Carry<br /><em>bold.</em></h1>
-            <p className="hero__dek">We're clearing out the last of our Original Gym Bags. Carry bold for $20.00 while supplies last.</p>
+            <p className="hero__dek">We're clearing out the last of our Original Gym Bags. Carry bold for $25.00 while supplies last.</p>
             <a className="button" href="#shop">Shop the clearance sale <Arrow /></a>
           </div>
           <div className="scroll-cue"><span /> Scroll to explore</div>
@@ -143,7 +143,7 @@ function App() {
         <section className="shop" id="shop">
           <div className="shop__bar">
             <div><p className="eyebrow">Clearance sale</p><h2>Last bags.<br />Bold moves.</h2></div>
-            <p>Help us clear the final inventory of the Original Dashiki Athletics Gym Bag. Get yours for $20.00 while supplies last, with secure checkout through Square.</p>
+            <p>Help us clear the final inventory of the Original Dashiki Athletics Gym Bag. Get yours for $25.00 while supplies last, with secure checkout through Square.</p>
           </div>
           <div className="product-grid">
             <article className="product-card product-card--hero" data-reveal>
@@ -151,11 +151,11 @@ function App() {
                 <span className="product-card__badge">Clearance</span>
                 <a className="product-card__buy-now" href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">Buy now <Arrow /></a>
                 <img src={`${A}studio-shot-5.jpg`} alt="Dashiki Athletics Original Gym Bag" />
-                <a href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">Buy now — $20.00 <Arrow /></a>
+                <a href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">Buy now — $25.00 <Arrow /></a>
               </div>
               <div className="product-card__meta">
                 <div><h3>The Original Gym Bag</h3><p>Black / Signature Dashiki print</p></div>
-                <strong>$20.00 · Clearance</strong>
+                <strong>$25.00 · Clearance</strong>
               </div>
             </article>
             <article className="product-story" data-reveal>
@@ -244,7 +244,7 @@ function App() {
             <p className="eyebrow">Clearance sale · While supplies last</p>
             <h2>Last chance.<br /><em>Carry bold.</em></h2>
             <a className="button button--light" href={SQUARE_CHECKOUT} target="_blank" rel="noreferrer">
-              Buy now — $20.00 <Arrow />
+              Buy now — $25.00 <Arrow />
             </a>
           </div>
         </section>
